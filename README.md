@@ -1,8 +1,9 @@
-# A MS spectrum data backend for HMDB xml files
+# Mass spectrometry data backends for The Human Metabolome Database (HMDB)
 
-The `MsBackendHmdbXml` package provides a `MsBackend` class to support
-import/handling of MS2 spectra from [HMDB](http://www.hmdb.ca) xml files for the
-[Spectra](https://github.com/rformassspectrometry/Spectra) R package.
+The `MsBackendHmdb` package provides functionality to import and handle MS/MS
+spectrum data from The Human Metabolome Database
+[HMDB](http://www.hmdb.ca). The package defines the `MsBackendHmdbXml` backend
+which can be used to import and use MS2 spectrum data from HMDB xml files with
+the [Spectra](https://github.com/rformassspectrometry/Spectra) R package.
 
-The backend extends `MsBackendDataFrame` from the `Spectra` package hence
-holding all MS peak data in memory.
+For more information see the vignette.
