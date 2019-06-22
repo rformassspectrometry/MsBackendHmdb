@@ -4,3 +4,5 @@ The `MsBackendHmdbXml` package provides a `MsBackend` class to support
 import/handling of MS2 spectra from [HMDB](http://www.hmdb.ca) xml files for the
 [Spectra](https://github.com/rformassspectrometry/Spectra) R package.
 
+The backend extends `MsBackendDataFrame` from the `Spectra` package hence
+holding all MS peak data in memory.
