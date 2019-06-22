@@ -1,6 +1,6 @@
 test_that(".import_hmdb_ms_ms_spectrum works", {
     fl <- system.file("xml/HMDB0000001_ms_ms_spectrum_2_experimental.xml",
-                      package = "MsBackendHmdbXml")
+                      package = "MsBackendHmdb")
 
     expect_error(.import_hmdb_ms_ms_spectrum(), "is missing")
     expect_error(.import_hmdb_ms_ms_spectrum(4), "character with length")
@@ -19,7 +19,7 @@ test_that(".import_hmdb_ms_ms_spectrum works", {
 
     ## One that should fail.
     fl <- system.file("xml/fail/HMDB0001875_ms_ms_spectrum_1768_experimental.xml",
-                      package = "MsBackendHmdbXml")
+                      package = "MsBackendHmdb")
     expect_error(.import_hmdb_ms_ms_spectrum(fl), "No mz and intensity")
     expect_warning(.import_hmdb_ms_ms_spectrum(fl, nonStop = TRUE))
 })

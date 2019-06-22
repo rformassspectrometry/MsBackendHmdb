@@ -1,8 +1,8 @@
-Package: MsBackendHmdbXml
-Title: MS spectrum data backend for HMDB
+Package: MsBackendHmdb
+Title: Mass spectrometry data backends for The Human Metabolome Database
 Version: 0.0.1
 Description: Mass spectrometry (MS) data backend supporting import and handling
-	     of MS data from xml files of the Human Metabolom Database (HMDB).
+	     of MS/MS spectra from the Human Metabolom Database (HMDB).
 Authors@R: c(person(given = "Laurent", family = "Gatto",
 	   comment = c(ORCID = "0000-0002-1520-2268"),
 	   email = "laurent.gatto@uclouvain.be",
@@ -34,8 +34,8 @@ Remotes:
 License: Artistic-2.0
 LazyData: yes
 VignetteBuilder: knitr
-BugReports: https://github.com/RforMassSpectrometry/MsBackendHmdbXml/issues
-URL: https://github.com/RforMassSpectrometry/MsBackendHmdbXml
+BugReports: https://github.com/RforMassSpectrometry/MsBackendHmdb/issues
+URL: https://github.com/RforMassSpectrometry/MsBackendHmdb
 biocViews: Infrastructure, Proteomics, MassSpectrometry, Metabolomics
 RoxygenNote: 6.1.1
 Collate:

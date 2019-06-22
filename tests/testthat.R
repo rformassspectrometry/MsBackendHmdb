@@ -1,4 +1,4 @@
 library("testthat")
-library("MsBackendHmdbXml")
+library("MsBackendHmdb")
 
-test_check("MsBackendHmdbXml")
+test_check("MsBackendHmdb")

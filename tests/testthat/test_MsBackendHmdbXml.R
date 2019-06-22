@@ -1,5 +1,5 @@
 test_that("backendInitialize,MsBackendHmdbXml works", {
-    fls <- dir(system.file("xml", package = "MsBackendHmdbXml"),
+    fls <- dir(system.file("xml", package = "MsBackendHmdb"),
                full.names = TRUE, pattern = "xml$")
     be <- MsBackendHmdbXml()
 
@@ -21,7 +21,7 @@ test_that("backendInitialize,MsBackendHmdbXml works", {
     expect_true(is(res_all@spectraData$msLevel, "Rle"))
 
     ## Import with failing file.
-    fls <- dir(system.file("xml", package = "MsBackendHmdbXml"),
+    fls <- dir(system.file("xml", package = "MsBackendHmdb"),
                full.names = TRUE, pattern = "xml$", recursive = TRUE)
     fls <- fls[length(fls):1]
     expect_error(res <- backendInitialize(be, fls))

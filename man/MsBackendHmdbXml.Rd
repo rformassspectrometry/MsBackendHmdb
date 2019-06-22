@@ -49,7 +49,7 @@ parameter `nonStop`.
 \examples{
 
 ## Create an MsBackendHmdbXml backend and import data from test xml files.
-fls <- dir(system.file("xml", package = "MsBackendHmdbXml"),
+fls <- dir(system.file("xml", package = "MsBackendHmdb"),
     full.names = TRUE, pattern = "xml$")
 be <- backendInitialize(MsBackendHmdbXml(), fls)
 be
