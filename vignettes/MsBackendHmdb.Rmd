@@ -1,0 +1,79 @@
+---
+title: "Description and usage of MsBackenHmdb"
+output:
+    BiocStyle::html_document:
+        toc_float: true
+vignette: >
+    %\VignetteIndexEntry{Description and usage of MsBackendHmdb}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+    %\VignettePackage{Spectra}
+    %\VignetteDepends{Spectra,BiocStyle}
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+**Package**: `r Biocpkg("MsBackendHmdb")`<br />
+**Authors**: `r packageDescription("MsBackendHmdb")[["Author"]] `<br />
+**Last modified:** `r file.info("MsBackendHmdb.Rmd")$mtime`<br />
+**Compiled**: `r date()`
+
+```{r, echo = FALSE, message = FALSE}
+library(Spectra)
+library(BiocStyle)
+```
+
+# Introduction
+
+The `Spectra` package provides a central infrastructure for the handling of Mass
+Spectrometry (MS) data. The package supports interchangeable use of different
+*backends* to import MS data from a variety of sources (such as mzML files). The
+`MsBackendHmdb` package enables, with the `MsBackendHmdbXml` object, import of
+MS/MS spectrum data from xml files from The Human Metabolome Database
+[HMDB](http://www.hmdb.ca). This vignette illustrates the usage of the
+`MsBackendHmdb` package to enable HMDB data usage in `Spectra`.
+
+# Importing MS/MS data from HMDB xml files
+
+Spectral data from HMDB can be downloaded in xml format, one xml file per
+spectrum. In our short example we load 4 such xml files which are provided with
+this package. Below we first load all required libraries and define the file
+names of the MS/MS spectra xml files.
+
+```{r load-libs}
+library(Spectra)
+library(MsBackendHmdb)
+
+fls <- dir(system.file("xml", package = "MsBackendHmdb"),
+           full.names = TRUE, pattern = "xml$")
+```
+
+MS data can be accessed and analyzed through `Spectra` objects. Below we create
+a `Spectra` with the data from the above xml files. To this end we provide the
+file names and specify to use a `MsBackendHmdbXml()` backend as *source* to
+enable data import.
+
+```{r import}
+sps <- Spectra(fls, source = MsBackendHmdbXml())
+```
+
+With that we have now full access to all imported spectra variables that we list
+below.
+
+```{r spectravars}
+spectraVariables(sps)
+```
+
+For example we can access m/z values with the `mz` methods.
+
+```{r mz}
+mz(sps)
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```
