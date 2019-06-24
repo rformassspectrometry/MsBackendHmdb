@@ -78,6 +78,11 @@
             return(DataFrame())
         } else stop(msg)
     }
+    if (is.unsorted(mz)) {
+        idx <- order(mz)
+        mz <- mz[idx]
+        int <- int[idx]
+    }
     res <- DataFrame(
         msLevel = 2L,
         spectrum_id = id,
