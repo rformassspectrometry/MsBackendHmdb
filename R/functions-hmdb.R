@@ -59,12 +59,12 @@
     ## 0: negative, +1: positive, NA: not set.
     if (plrty == "")
         plrty <- NA_integer_
-    else plrty <- ifelse(length(grep("pos", tolower(plrty))), yes = 1L, no = 0L)
+    else plrty <- if(length(grep("pos", plrty, ignore.case = TRUE))) 1L else 0L
     cev <- xml_double(xml_find_first(x_ml, "collision-energy-voltage"))
     prd <- xml_text(xml_find_first(x_ml, "predicted"))
     if (prd == "")
         prd <- NA
-    else prd <- ifelse(prd == "false", yes = FALSE, no = TRUE)
+    else prd <- prd != "false"
     splsh <- xml_text(xml_find_first(x_ml, "splash-key"))
     itype <- xml_text(xml_find_first(x_ml, "instrument-type"))
     if (itype == "")

@@ -66,10 +66,50 @@ below.
 spectraVariables(sps)
 ```
 
-For example we can access m/z values with the `mz` methods.
+Besides default spectra variables, such as `msLevel`, `rtime`, `precursorMz`
+(most of which are however not defined in the xml files from HMDB) we have also
+additional spectra variables such as the `spectrum_id` (the ID of the spectrum
+in the HMDB database), `compound_id` (the metabolite identifier), `splash` or
+`instrument_type`. Below we list the instrument type for the 4 spectra.
+
+```{r instrument}
+sps$instrument_type
+```
+
+The last spectrum was predicted and the instrument type is thus set to `NA`.
+
+In addition we can also access the m/z and intensity values of each spectrum.
 
 ```{r mz}
 mz(sps)
+intensity(sps)
+```
+
+## Importing all MS/MS spectra from HMDB
+
+It is also possible to import all MS/MS spectra from HMDB into a `Spectra`
+object. For this we have to firstly download all *xml* files from the
+*downloads* page of HMDB. HMDB allows to download all files in a single archive,
+unzipping that will result in a folder with a very large number of small files,
+one file per spectrum. Note also that this folder will contain also NMR and
+other types of spectra. The variable `path` below is supposed to point to the
+folder where all xml files can be found. We first list all xml files in that
+folder using the pattern `"ms_ms_spectrum"` to get only file names for MS/MS
+spectra.
+
+```{r all-select-files, eval = FALSE}
+path <- "~/data/hmdb_all_spectra/"
+fls <- dir(path, pattern = "ms_ms_spectrum", full.names = TRUE)
+```
+
+With that we can now import the data and create a `Spectra` object representing
+the collection of all HMDB MS2 spectra. Setting `nonStop = TRUE` prevents the
+call to stop whenever it encounters problematic xml files (like xml files
+without peaks). Note that the import of about 400,000 MS/MS spectra can take a
+long time (in the range of one to several hours).
+
+```{r all-import, eval = FALSE}
+sps_hmdb <- Spectra(fls, source = MsBackendHmdbXml(), nonStop = TRUE)
 ```
 
 # Session information
