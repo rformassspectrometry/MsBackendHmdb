@@ -46,6 +46,7 @@ jobs:
       name: "codecov and pkgdown (on master)"
       before_deploy:
         - R CMD INSTALL .
+        - Rscript -e 'remotes::install_cran("pkgdown")'
         - travis_wait 20 Rscript -e 'pkgdown::build_site()'
       deploy:
         provider: pages
