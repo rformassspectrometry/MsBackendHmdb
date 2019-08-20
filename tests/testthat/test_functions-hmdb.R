@@ -5,7 +5,7 @@ test_that(".import_hmdb_ms_ms_spectrum works", {
     expect_error(.import_hmdb_ms_ms_spectrum(), "is missing")
     expect_error(.import_hmdb_ms_ms_spectrum(4), "character with length")
 
-    res <- MsBackendHmdbXml:::.import_hmdb_ms_ms_spectrum(fl)
+    res <- .import_hmdb_ms_ms_spectrum(fl)
     cns <- c("msLevel", "spectrum_id", "compound_id", "polarity",
              "collisionEnergy", "predicted", "splash", "instrument_type",
              "dataOrigin", "mz", "intensity")
