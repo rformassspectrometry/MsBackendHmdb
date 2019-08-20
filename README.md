@@ -11,4 +11,4 @@ spectrum data from The Human Metabolome Database
 which can be used to import and use MS2 spectrum data from HMDB xml files with
 the [Spectra](https://github.com/rformassspectrometry/Spectra) R package.
 
-For more information see the [vignette](vignettes/MsBackendHmdb.Rmd).
+For more information see the package vignette.

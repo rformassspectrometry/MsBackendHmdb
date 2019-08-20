@@ -1,6 +1,6 @@
 Package: MsBackendHmdb
 Title: Mass spectrometry data backends for The Human Metabolome Database
-Version: 0.0.1
+Version: 0.1.0
 Description: Mass spectrometry (MS) data backend supporting import and handling
 	     of MS/MS spectra from the Human Metabolom Database (HMDB).
 Authors@R: c(person(given = "Laurent", family = "Gatto",
