@@ -13,38 +13,38 @@
 MsBackendHmdbXml()
 }
 \arguments{
-\item{object}{Instance of `MsBackendHmdbXml` class.}
+\item{object}{Instance of \code{MsBackendHmdbXml} class.}
 
-\item{files}{`character` with the (full) file name(s) of the HMDB xml file(s)
+\item{files}{\code{character} with the (full) file name(s) of the HMDB xml file(s)
 from which MS/MS data should be imported.}
 
-\item{nonStop}{`logical(1)` whether import should be stopped if an xml file
-does not contain all required fields. Defaults to `nonStop = FALSE`.}
+\item{nonStop}{\code{logical(1)} whether import should be stopped if an xml file
+does not contain all required fields. Defaults to \code{nonStop = FALSE}.}
 
 \item{...}{Currently ignored.}
 
 \item{BPPARAM}{Parameter object defining the parallel processing setup to
-import data in parallel. Defaults to `BPPARAM = bpparam()`. See
-[bpparam()] for more information.}
+import data in parallel. Defaults to \code{BPPARAM = bpparam()}. See
+\code{\link[=bpparam]{bpparam()}} for more information.}
 }
 \description{
-The `MsBackendHmdbXml` class supports import of MS/MS spectra data from xml
-files from The Human Metabolome Database [HMDB](http://www.hmdb.ca). After
-initial import, the full MS data is kept in memory. `MsBackendHmdbXml`
-extends the [MsBackendDataFrame()] backend directly and supports thus
-the [applyProcessing()] function to make data manipulations persistent. The
-backend does however **not** support export of MS2 data to xml files in HMDB
+The \code{MsBackendHmdbXml} class supports import of MS/MS spectra data from xml
+files from The Human Metabolome Database \href{http://www.hmdb.ca}{HMDB}. After
+initial import, the full MS data is kept in memory. \code{MsBackendHmdbXml}
+extends the \code{\link[=MsBackendDataFrame]{MsBackendDataFrame()}} backend directly and supports thus
+the \code{\link[=applyProcessing]{applyProcessing()}} function to make data manipulations persistent. The
+backend does however \strong{not} support export of MS2 data to xml files in HMDB
 format.
 
-New objects are created with the `MsBackendHmdbXml` function. The
-`backendInitialize` method has to be subsequently called to initialize
+New objects are created with the \code{MsBackendHmdbXml} function. The
+\code{backendInitialize} method has to be subsequently called to initialize
 the object and import MS/MS data from (one or more) xml files from HMDB.
-Optional parameter `nonStop` allows to specify whether the import returns
-with an error if one of the xml files lacks required data, such as `mz` and
-`intensity` values (default `nonStop = FALSE`), or whether only affected
-file(s) is(are) skipped and a warning is shown (`nonStop = TRUE`). Note that
+Optional parameter \code{nonStop} allows to specify whether the import returns
+with an error if one of the xml files lacks required data, such as \code{mz} and
+\code{intensity} values (default \code{nonStop = FALSE}), or whether only affected
+file(s) is(are) skipped and a warning is shown (\code{nonStop = TRUE}). Note that
 any other error (such as xml import error) will abort import regardless of
-parameter `nonStop`.
+parameter \code{nonStop}.
 }
 \examples{
 
