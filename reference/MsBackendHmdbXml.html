@@ -32,22 +32,22 @@
 
 <meta property="og:title" content="MS data backend for HMDB xml files — MsBackendHmdbXml" />
 
-<meta property="og:description" content="The `MsBackendHmdbXml` class supports import of MS/MS spectra data from xml
-files from The Human Metabolome Database [HMDB](http://www.hmdb.ca). After
-initial import, the full MS data is kept in memory. `MsBackendHmdbXml`
-extends the [MsBackendDataFrame()] backend directly and supports thus
-the [applyProcessing()] function to make data manipulations persistent. The
-backend does however **not** support export of MS2 data to xml files in HMDB
+<meta property="og:description" content="The MsBackendHmdbXml class supports import of MS/MS spectra data from xml
+files from The Human Metabolome Database HMDB. After
+initial import, the full MS data is kept in memory. MsBackendHmdbXml
+extends the MsBackendDataFrame() backend directly and supports thus
+the applyProcessing() function to make data manipulations persistent. The
+backend does however not support export of MS2 data to xml files in HMDB
 format.
-New objects are created with the `MsBackendHmdbXml` function. The
-`backendInitialize` method has to be subsequently called to initialize
+New objects are created with the MsBackendHmdbXml function. The
+backendInitialize method has to be subsequently called to initialize
 the object and import MS/MS data from (one or more) xml files from HMDB.
-Optional parameter `nonStop` allows to specify whether the import returns
-with an error if one of the xml files lacks required data, such as `mz` and
-`intensity` values (default `nonStop = FALSE`), or whether only affected
-file(s) is(are) skipped and a warning is shown (`nonStop = TRUE`). Note that
+Optional parameter nonStop allows to specify whether the import returns
+with an error if one of the xml files lacks required data, such as mz and
+intensity values (default nonStop = FALSE), or whether only affected
+file(s) is(are) skipped and a warning is shown (nonStop = TRUE). Note that
 any other error (such as xml import error) will abort import regardless of
-parameter `nonStop`." />
+parameter nonStop." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -124,22 +124,22 @@ parameter `nonStop`." />
 
     <div class="ref-description">
     
-    <p>The `MsBackendHmdbXml` class supports import of MS/MS spectra data from xml
-files from The Human Metabolome Database [HMDB](http://www.hmdb.ca). After
-initial import, the full MS data is kept in memory. `MsBackendHmdbXml`
-extends the [MsBackendDataFrame()] backend directly and supports thus
-the [applyProcessing()] function to make data manipulations persistent. The
-backend does however **not** support export of MS2 data to xml files in HMDB
+    <p>The <code>MsBackendHmdbXml</code> class supports import of MS/MS spectra data from xml
+files from The Human Metabolome Database <a href='http://www.hmdb.ca'>HMDB</a>. After
+initial import, the full MS data is kept in memory. <code>MsBackendHmdbXml</code>
+extends the <code>MsBackendDataFrame()</code> backend directly and supports thus
+the <code>applyProcessing()</code> function to make data manipulations persistent. The
+backend does however <strong>not</strong> support export of MS2 data to xml files in HMDB
 format.</p>
-<p>New objects are created with the `MsBackendHmdbXml` function. The
-`backendInitialize` method has to be subsequently called to initialize
+<p>New objects are created with the <code>MsBackendHmdbXml</code> function. The
+<code>backendInitialize</code> method has to be subsequently called to initialize
 the object and import MS/MS data from (one or more) xml files from HMDB.
-Optional parameter `nonStop` allows to specify whether the import returns
-with an error if one of the xml files lacks required data, such as `mz` and
-`intensity` values (default `nonStop = FALSE`), or whether only affected
-file(s) is(are) skipped and a warning is shown (`nonStop = TRUE`). Note that
+Optional parameter <code>nonStop</code> allows to specify whether the import returns
+with an error if one of the xml files lacks required data, such as <code>mz</code> and
+<code>intensity</code> values (default <code>nonStop = FALSE</code>), or whether only affected
+file(s) is(are) skipped and a warning is shown (<code>nonStop = TRUE</code>). Note that
 any other error (such as xml import error) will abort import regardless of
-parameter `nonStop`.</p>
+parameter <code>nonStop</code>.</p>
     
     </div>
 
@@ -154,17 +154,17 @@ parameter `nonStop`.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>Instance of `MsBackendHmdbXml` class.</p></td>
+      <td><p>Instance of <code>MsBackendHmdbXml</code> class.</p></td>
     </tr>
     <tr>
       <th>files</th>
-      <td><p>`character` with the (full) file name(s) of the HMDB xml file(s)
+      <td><p><code>character</code> with the (full) file name(s) of the HMDB xml file(s)
 from which MS/MS data should be imported.</p></td>
     </tr>
     <tr>
       <th>nonStop</th>
-      <td><p>`logical(1)` whether import should be stopped if an xml file
-does not contain all required fields. Defaults to `nonStop = FALSE`.</p></td>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code> whether import should be stopped if an xml file
+does not contain all required fields. Defaults to <code>nonStop = FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -173,8 +173,8 @@ does not contain all required fields. Defaults to `nonStop = FALSE`.</p></td>
     <tr>
       <th>BPPARAM</th>
       <td><p>Parameter object defining the parallel processing setup to
-import data in parallel. Defaults to `BPPARAM = bpparam()`. See
-[bpparam()] for more information.</p></td>
+import data in parallel. Defaults to <code>BPPARAM = bpparam()</code>. See
+<code>bpparam()</code> for more information.</p></td>
     </tr>
     </table>
     
