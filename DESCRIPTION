@@ -1,6 +1,6 @@
 Package: MsBackendHmdb
 Title: Mass spectrometry data backends for The Human Metabolome Database
-Version: 0.1.0
+Version: 0.1.1
 Description: Mass spectrometry (MS) data backend supporting import and handling
 	     of MS/MS spectra from the Human Metabolom Database (HMDB).
 Authors@R: c(person(given = "Laurent", family = "Gatto",
@@ -17,7 +17,7 @@ Authors@R: c(person(given = "Laurent", family = "Gatto",
 	   role = "aut"))
 Depends:
     R (>= 3.5.0),
-    Spectra
+    Spectra (>= 0.5.0)
 Imports:
     BiocParallel,
     xml2,
@@ -38,7 +38,7 @@ VignetteBuilder: knitr
 BugReports: https://github.com/RforMassSpectrometry/MsBackendHmdb/issues
 URL: https://github.com/RforMassSpectrometry/MsBackendHmdb
 biocViews: Infrastructure, Proteomics, MassSpectrometry, Metabolomics
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Roxygen: list(markdown=TRUE)
 Collate:
     'hidden_aliases.R'

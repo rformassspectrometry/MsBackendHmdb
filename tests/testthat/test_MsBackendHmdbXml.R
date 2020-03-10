@@ -18,7 +18,7 @@ test_that("backendInitialize,MsBackendHmdbXml works", {
     expect_identical(res_all[1]$mz, res$mz)
     expect_true(all(res_all$msLevel == 2L))
     expect_identical(res_all$dataOrigin, normalizePath(fls))
-    expect_true(is(res_all@spectraData$msLevel, "Rle"))
+    expect_true(is.integer(res_all@spectraData$msLevel))
 
     ## Import with failing file.
     fls <- dir(system.file("xml", package = "MsBackendHmdb"),

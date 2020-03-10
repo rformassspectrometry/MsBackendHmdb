@@ -65,7 +65,7 @@ setClass("MsBackendHmdbXml",
                                readonly = FALSE,
                                version = "0.1"))
 
-#' @importMethodsFrom Spectra backendInitialize spectraData<- $<- $
+#' @importMethodsFrom Spectra backendInitialize asDataFrame<- $<- $
 #'
 #' @importFrom BiocParallel bpparam
 #'
@@ -99,7 +99,7 @@ setMethod("backendInitialize", signature = "MsBackendHmdbXml",
               if (nonStop && length(files) > nrow(res))
                       warning("Import failed for ", length(files) - nrow(res),
                               " files")
-              spectraData(object) <- res
+              asDataFrame(object) <- res
               object$dataStorage <- "<memory>"
               object$centroided <- TRUE
               validObject(object)
