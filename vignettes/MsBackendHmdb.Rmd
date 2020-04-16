@@ -1,5 +1,5 @@
 ---
-title: "Description and usage of MsBackenHmdb"
+title: "Description and usage of MsBackendHmdb"
 output:
     BiocStyle::html_document:
         toc_float: true
