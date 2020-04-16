@@ -39,7 +39,7 @@ MS/MS spectrum data from xml files from The Human Metabolome Database
 
 Spectral data from HMDB can be downloaded in xml format, one xml file per
 spectrum. In our short example we load 4 such xml files which are provided with
-this package. Below we first load all required libraries and define the file
+this package. Below we first load all required packages and define the file
 names of the MS/MS spectra xml files.
 
 ```{r load-libs}
