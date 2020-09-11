@@ -87,7 +87,7 @@ parameter nonStop." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">MsBackendHmdb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -193,7 +193,9 @@ import data in parallel. Defaults to <code>BPPARAM = bpparam()</code>. See
 <span class='co'>## Create an MsBackendHmdbXml backend and import data from test xml files.</span>
 <span class='kw'>fls</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"xml"</span>, package = <span class='st'>"MsBackendHmdb"</span>),
     full.names = <span class='fl'>TRUE</span>, pattern = <span class='st'>"xml$"</span>)
-<span class='kw'>be</span> <span class='op'>&lt;-</span> <span class='fu'>backendInitialize</span>(<span class='fu'>MsBackendHmdbXml</span>(), <span class='kw'>fls</span>)</div><div class='output co'>#&gt; <span class='message'>Start data import from 4 files ... </span></div><div class='output co'>#&gt; <span class='message'>done</span></div><div class='input'><span class='kw'>be</span></div><div class='output co'>#&gt; MsBackendHmdbXml with 4 spectra
+<span class='kw'>be</span> <span class='op'>&lt;-</span> <span class='fu'>backendInitialize</span>(<span class='fu'>MsBackendHmdbXml</span>(), <span class='kw'>fls</span>)
+</div><div class='output co'>#&gt; <span class='message'>Start data import from 4 files ... </span></div><div class='output co'>#&gt; <span class='message'>done</span></div><div class='input'><span class='kw'>be</span>
+</div><div class='output co'>#&gt; MsBackendHmdbXml with 4 spectra
 #&gt;     msLevel     rtime scanIndex
 #&gt;   &lt;integer&gt; &lt;numeric&gt; &lt;integer&gt;
 #&gt; 1         2        NA        NA
@@ -201,7 +203,9 @@ import data in parallel. Defaults to <code>BPPARAM = bpparam()</code>. See
 #&gt; 3         2        NA        NA
 #&gt; 4         2        NA        NA
 #&gt;  ... 21 more variables/columns.</div><div class='input'>
-<span class='kw'>be</span><span class='op'>$</span><span class='kw'>msLevel</span></div><div class='output co'>#&gt; [1] 2 2 2 2</div><div class='input'><span class='kw'>be</span><span class='op'>$</span><span class='kw'>compound_id</span></div><div class='output co'>#&gt; [1] "HMDB0000001" "HMDB0000001" "HMDB0004370" "HMDB0006719"</div></pre>
+<span class='kw'>be</span><span class='op'>$</span><span class='kw'>msLevel</span>
+</div><div class='output co'>#&gt; [1] 2 2 2 2</div><div class='input'><span class='kw'>be</span><span class='op'>$</span><span class='kw'>compound_id</span>
+</div><div class='output co'>#&gt; [1] "HMDB0000001" "HMDB0000001" "HMDB0004370" "HMDB0006719"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -217,7 +221,7 @@ import data in parallel. Defaults to <code>BPPARAM = bpparam()</code>. See
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.9000.</p>
 </div>
 
       </footer>
