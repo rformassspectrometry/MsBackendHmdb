@@ -53,10 +53,12 @@ fls <- dir(system.file("xml", package = "MsBackendHmdb"),
 MS data can be accessed and analyzed through `Spectra` objects. Below we create
 a `Spectra` with the data from the above xml files. To this end we provide the
 file names and specify to use a `MsBackendHmdbXml()` backend as *source* to
-enable data import.
+enable data import and `MsBackendDataFrame()` as *backend* to store/handle the
+data.
 
 ```{r import}
-sps <- Spectra(fls, source = MsBackendHmdbXml())
+sps <- Spectra(fls, source = MsBackendHmdbXml(),
+               backend = MsBackendDataFrame())
 ```
 
 With that we have now full access to all imported spectra variables that we list
@@ -109,7 +111,8 @@ without peaks). Note that the import of about 400,000 MS/MS spectra can take a
 long time (in the range of one to several hours).
 
 ```{r all-import, eval = FALSE}
-sps_hmdb <- Spectra(fls, source = MsBackendHmdbXml(), nonStop = TRUE)
+sps_hmdb <- Spectra(fls, source = MsBackendHmdbXml(), nonStop = TRUE,
+                    backend = MsBackendDataFrame())
 ```
 
 # Session information
